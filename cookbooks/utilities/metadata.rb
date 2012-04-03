@@ -6,6 +6,7 @@ long_description IO.read(File.join(File.dirname(__FILE__), 'README.rdoc'))
 version          "0.3.4"
 
 recipe "utilities::default", "Not yet implemented"
+recipe "utilities::cheftutorial.rb", "Chef Tutorial"
 recipe "utilities::change_admin_password", "Changes the administrator password"
 recipe "utilities::system_reboot", "Reboots the system"
 recipe "utilities::system_shutdown", "Shuts down the system"
@@ -14,6 +15,12 @@ recipe "utilities::create_scheduled_task", "Creates the 'rs_scheduled_task' sche
 recipe "utilities::delete_scheduled_task", "Deletes the 'rs_scheduled_task' scheduled task under the 'administrator' user. Uses the SCHTASKS Windows command"
 recipe "utilities::online_attached_drives", "Change 'Offline' status to 'Online' for the attached drives"
 
+attribute "utilities/MYNAME",
+  :display_name => "Please enter your name",
+  :description => "This is your name",
+  :recipes => ["utilities::cheftutorial"],
+  :required => "required"
+  
 attribute "utilities/admin_password",
   :display_name => "New administrator password",
   :description => "New administrator password",

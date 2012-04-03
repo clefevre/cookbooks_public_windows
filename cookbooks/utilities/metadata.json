@@ -18,6 +18,7 @@
         ],
         "type": "string",
         "recipes": [
+		  "utilities::cheftutorial": "Chef Tutorial",
           "utilities::register_dns_name"
         ],
         "description": "Valid values are 'public' (default) or 'private'",
@@ -115,6 +116,18 @@
         ],
         "description": "DNS id (from DNS provider) to register for the current public IP",
         "display_name": "DNS id to register"
+      },
+        "utilities/MYNAME": {
+        "required": "required",
+        "calculated": false,
+        "choice": [
+            ],
+        "type": "string",
+            "recipes": [
+        "utilities::cheftutorial"
+            ],
+        "display_name": "Please enter your name",
+        "description": "This is your name"
       }
     },
     "groupings": {
